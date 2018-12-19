@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @JsonIgnoreProperties({ "mobile", "hibernateLazyInitializer", "handler", "password" })
 @Table(name = "tbl_user")
-public class User implements Serializable{
+public class User implements Serializable {
 	private static final long serialVersionUID = 7864929268749762477L;
 	private Integer id;
 	private Integer createTime;
@@ -38,15 +38,13 @@ public class User implements Serializable{
 	private String isActive;
 	private String isDeleted;
 	private UserRole roleId;
-	
-	
 
 	public User() {
 	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id", nullable = false, unique = true)
 	public Integer getId() {
 		return id;
 	}
@@ -172,8 +170,8 @@ public class User implements Serializable{
 		this.isDeleted = isDeleted;
 	}
 
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="role_id")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "role_id")
 	public UserRole getRoleId() {
 		return roleId;
 	}
@@ -181,7 +179,5 @@ public class User implements Serializable{
 	public void setRoleId(UserRole roleId) {
 		this.roleId = roleId;
 	}
-
-	
 
 }

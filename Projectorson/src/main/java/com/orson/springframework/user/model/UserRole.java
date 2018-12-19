@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * @author Rohit Kulkarni. 19-Dec-2018 Projectorson
  *
  */
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 @Entity
 @Table(name = "tbl_user_role")
 public class UserRole implements Serializable {
@@ -34,7 +34,7 @@ public class UserRole implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "id", nullable = false, unique = true)
 	public Integer getId() {
 		return id;
 	}
