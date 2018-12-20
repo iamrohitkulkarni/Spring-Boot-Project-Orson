@@ -24,14 +24,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class User implements Serializable {
 	private static final long serialVersionUID = 7864929268749762477L;
 	private Integer id;
-	private Integer createTime;
-	private Integer writeTime;
+	private Long createTime;
+	private Long writeTime;
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String password;
 	private String gender;
-	private Integer mobile;
+	private Long mobile;
 	private String imageUrl;
 	private String dob;
 	private String emailVerified;
@@ -54,20 +54,20 @@ public class User implements Serializable {
 	}
 
 	@Column(name = "create_date")
-	public Integer getCreateTime() {
+	public Long getCreateTime() {
 		return createTime;
 	}
 
-	public void setCreateTime(Integer createTime) {
+	public void setCreateTime(Long createTime) {
 		this.createTime = createTime;
 	}
 
 	@Column(name = "write_date")
-	public Integer getWriteTime() {
+	public Long getWriteTime() {
 		return writeTime;
 	}
 
-	public void setWriteTime(Integer writeTime) {
+	public void setWriteTime(Long writeTime) {
 		this.writeTime = writeTime;
 	}
 
@@ -117,11 +117,11 @@ public class User implements Serializable {
 	}
 
 	@Column(name = "mobile")
-	public Integer getMobile() {
+	public Long getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(Integer mobile) {
+	public void setMobile(Long mobile) {
 		this.mobile = mobile;
 	}
 

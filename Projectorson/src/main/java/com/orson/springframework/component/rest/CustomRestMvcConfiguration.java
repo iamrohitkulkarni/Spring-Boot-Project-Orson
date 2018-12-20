@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 
+import com.orson.springframework.user.model.User;
+
 /**
  * @author Rohit Kulkarni. 20-Dec-2018 Projectorson
  *
@@ -14,5 +16,6 @@ public class CustomRestMvcConfiguration implements RepositoryRestConfigurer {
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 	//	config.disableDefaultExposure(); to hide default exposer of entity
+		config.exposeIdsFor(User.class);
 	}
 }
